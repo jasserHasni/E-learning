@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Site Metas -->
+    <title>Perfect - Responsive HTML5 Template</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="#" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href="css/pogo-slider.min.css" />
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css" />
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- FullCalendar CSS and JS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+      #calendar {
+        max-width: 70%;
+        margin: 50px auto;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+      }
+
+      .fc-event {
+        background-color: rgb(161, 141, 255) !important;
+        color: black !important;
+        border: 1px solid #ddd !important;
+        padding: 5px !important;
+        text-align: center !important;
+      }
+    </style>
+  </head>
+  <body
+    id="inner_page"
+    data-spy="scroll"
+    data-target="#navbar-wd"
+    data-offset="98"
+  >
+    <!-- Start header -->
+    <header class="top-header">
+      <nav class="navbar header-nav navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"
+            ><img src="images/logo.png" alt="image"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbar-wd"
+            aria-controls="navbar-wd"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbar-wd"
+          >
+            <ul class="navbar-nav">
+              <li><a class="nav-link active" href="/">Acceuil</a></li>
+              <li><a class="nav-link" href="/about">A propos</a></li>
+              <li><a class="nav-link" href="/courses">Séances</a></li>
+              <li><a class="nav-link" href="/reaserch">Documents</a></li>
+              <li><a class="nav-link" href="/formation">Formations</a></li>
+              <li><a class="nav-link" href="/contact">Contact</a></li>
+              <% if (loggedIn) { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+              <% } else { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+              <% } %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- End header -->
+
+    <!-- Section -->
+    <section class="inner_banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="full">
+              <h3>All Courses</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End section -->
+
+    <div id="calendar"></div>
+
+    <!-- Event Modal -->
+    <div
+      class="modal fade"
+      id="eventModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="eventModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="eventModalLabel">Event Details</h5>
+            <button
+              style="color: white"
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p id="eventTitle"></p>
+            <p id="eventStart"></p>
+            <p id="eventEnd"></p>
+
+            <p id="eventDescription"></p>
+            <a id="eventLinkdocs" href="#" target="_blank"
+              >Télécharger les documents nécessaires</a
+            >
+          </div>
+
+          <div class="modal-footer">
+            <button
+              style="position: absolute; left: 20px"
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              id="showPaymentModal"
+            >
+              Payer
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              id="accessButton"
+              disabled
+            >
+              Joindre
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="paymentModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">
+              Suiver Ces Instructions Pour Avoir l'Accés
+            </h4>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ol>
+              <li>-Payer 20 TND Vers 29722048 Avec D17</li>
+
+              <li>
+                <form
+                  id="payment-form"
+                  method="POST"
+                  enctype="multipart/form-data"
+                >
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label"
+                      >Votre Numéro De Téléphone:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="recipient-name"
+                      name="num"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label"
+                      >Voici un exemple de numéro d'autorisation de reçu
+                      :</label
+                    >
+                    <img src="/images/cap.png" alt="" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label"
+                      >Entrer Le Numéro D'authorisation De Récu:</label
+                    >
+                    <input
+                      name="aut"
+                      type="text"
+                      class="form-control"
+                      id="recipient-name"
+                    />
+                  </div>
+
+                  <li>
+                    S'il y a un problème, contactez-nous ici :
+                    <a href="https://www.facebook.com" target="_blank"
+                      >Facebook</a
+                    >
+                  </li>
+
+                  <button
+                    style="position: absolute; bottom: 33px"
+                    type="submit"
+                    class="btn btn-secondary"
+                  >
+                    Confirmer
+                  </button>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Fermer
+                    </button>
+                  </div>
+                </form>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start Footer -->
+    <footer class="footer-box">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div class="footer_blog">
+              <div class="full margin-bottom_30">
+                <img src="images/footer_logo.png" alt="#" />
+              </div>
+              <div class="full white_fonts">
+                <p>
+                  Bienvenue sur notre plateforme éducative ! Nous proposons une
+                  vaste gamme de documents pédagogiques et organisons des
+                  sessions en direct pour les étudiants.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div class="footer_blog footer_menu white_fonts">
+              <h3>Navigation</h3>
+              <ul>
+                <li><a href="./courses.html">> Cours</a></li>
+                <li><a href="./contact.html">> Contact</a></li>
+                <li><a href="./reaserch.html">>Documents</a></li>
+                <li><a href="./formation.html">>Formation</a></li>
+                <li><a href="./about.html">>A propos</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div class="footer_blog full white_fonts">
+              <h3>Newsletter</h3>
+
+              <div class="newsletter_form">
+                <form action="/">
+                  <input type="email" placeholder="Email" name="#" required />
+                  <button>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div class="footer_blog full white_fonts">
+              <h3>Contact</h3>
+              <ul class="full">
+                <li>
+                  <img src="images/i5.png" /><span>Nabeul<br />Tunisie</span>
+                </li>
+                <li><img src="images/i6.png" /><span>email@gmail.com</span></li>
+                <li><img src="images/i7.png" /><span>+21629722048</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <script>
+      $(document).ready(function () {
+        // Your existing code for calendar and event modal...
+
+        $("#showPaymentModal").on("click", function () {
+          $("#eventModal").modal("hide"); // Hide the event modal
+          $("#paymentModal").modal("show"); // Show the payment modal
+        });
+      });
+    </script>
+
+    <script>
+      let clickedEventId;
+      $(document).ready(function () {
+        // Get the query string from the current URL
+        const queryString = window.location.search;
+
+        // Parse the query string
+        const urlParams = new URLSearchParams(queryString);
+
+        // Get the value of 'num' from the query parameters
+        const num = urlParams.get("num");
+        console.log(num); // Log the value of 'num' to the console
+
+        function fetchEvents() {
+          $.ajax({
+            url: `/api/events/num/${num}`, // Use backticks for template literals
+            method: "GET",
+            success: function (events) {
+              $("#calendar").fullCalendar("removeEvents");
+              $("#calendar").fullCalendar("addEventSource", events);
+            },
+            error: function (error) {
+              console.log("Error fetching events:", error);
+            },
+          });
+        }
+
+        $("#calendar").fullCalendar({
+          header: {
+            left: "prev,next today",
+            center: "title",
+            right: "month,agendaWeek,agendaDay",
+          },
+          defaultDate: "2024-08-01",
+          editable: true,
+          eventLimit: true,
+
+          eventClick: function (event) {
+            // Store the event ID in the variable
+            clickedEventId = event._id;
+            console.log("Clicked Event ID:", clickedEventId); // Log the event ID to the console
+            checkAccess(event.meet);
+
+            // Fill modal with event details
+            $("#eventTitle").text("Title: " + event.title);
+            $("#eventStart").text(
+              "Start: " + event.start.format("MMMM Do YYYY, h:mm:ss a")
+            );
+            $("#eventEnd").text(
+              "End: " +
+                (event.end
+                  ? event.end.format("MMMM Do YYYY, h:mm:ss a")
+                  : "N/A")
+            );
+
+            $("#eventDescription").text(event.description);
+            $("#eventLinkdocs").attr("href", event.linkdocs);
+
+            // Show the modal
+            $("#eventModal").modal("show");
+          },
+          eventRender: function (event, element) {
+            element.find(".fc-time").hide(); // Hide the time element
+            element.find(".fc-title").css({
+              "font-size": "16px", // Increase font size
+              color: "#000", // Change color if needed
+            });
+            element.find(".fc-title").text(event.title); // Only display the title
+          },
+        });
+
+        fetchEvents();
+
+        $("#add-event-form").on("submit", function (e) {
+          e.preventDefault();
+          const newEvent = {
+            title: $("#title").val(),
+            start: $("#start").val(),
+            end: $("#end").val(),
+            num: $("#num").val(),
+            description: $("#description").val(),
+            linkdocs: $("#linkdocs").val(),
+          };
+
+          $.ajax({
+            url: "/api/events",
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(newEvent),
+            success: function (event) {
+              $("#calendar").fullCalendar("renderEvent", event, true);
+              $("#add-event-form")[0].reset();
+            },
+            error: function (error) {
+              console.log("Error adding event:", error);
+            },
+          });
+        });
+      });
+      function checkAccess(meet) {
+        fetch("/api/check-request-seances-status")
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+
+            let accessGranted = false;
+
+            data.forEach((item) => {
+              if (item.seance === clickedEventId) {
+                accessGranted = true;
+                if (item.status === "accepted") {
+                  document.getElementById("accessButton").disabled = false;
+                  document.getElementById("accessButton").onclick =
+                    function () {
+                      window.open(meet, "_blank");
+                    };
+                } else if (item.status === "waiting") {
+                  document.getElementById("showPaymentModal").disabled = true;
+                  document.getElementById("showPaymentModal").innerText =
+                    "En Cours De Révision";
+                  document.getElementById("accessButton").disabled = true;
+                } else {
+                  document.getElementById("accessButton").disabled = true;
+                }
+                // Exit the loop as we found the matching seance
+                return;
+              }
+            });
+
+            if (!accessGranted) {
+              document.getElementById("accessButton").disabled = true;
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+
+      document
+        .getElementById("payment-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const form = event.target;
+          const formData = new FormData(form);
+
+          // Convert FormData to JSON
+          const jsonObject = {};
+          formData.forEach((value, key) => {
+            jsonObject[key] = value;
+          });
+
+          // Add extra fields to JSON
+          jsonObject["seance"] = clickedEventId;
+          console.log(jsonObject);
+
+          fetch("/calendar", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(jsonObject),
+          })
+            .then((response) => response.text())
+            .then((data) => {
+              alert(data); // Handle success message
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
+        });
+
+      // Call the function to check the request status
+      checkRequestWaiting();
+    </script>
+  </body>
+</html>

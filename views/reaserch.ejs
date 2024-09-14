@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Site Metas -->
+    <title>Perfect - Responsive HTML5 Template</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="#" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href="css/pogo-slider.min.css" />
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="css/reaserch.css" />
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body
+    id="inner_page"
+    data-spy="scroll"
+    data-target="#navbar-wd"
+    data-offset="98"
+  >
+    <!-- END LOADER -->
+
+    <!-- Start header -->
+    <header class="top-header">
+      <nav class="navbar header-nav navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"
+            ><img src="images/logo.png" alt="image"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbar-wd"
+            aria-controls="navbar-wd"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbar-wd"
+          >
+            <ul class="navbar-nav">
+              <li><a class="nav-link active" href="/">Acceuil</a></li>
+              <li><a class="nav-link" href="/about">A propos</a></li>
+              <li><a class="nav-link" href="/courses">Séances</a></li>
+              <li><a class="nav-link" href="/reaserch">Documents</a></li>
+              <li><a class="nav-link" href="/formation">Formations</a></li>
+              <li><a class="nav-link" href="/contact">Contact</a></li>
+              <% if (loggedIn) { %>
+              <li>
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+              <% } else { %>
+              <li>
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+              <% } %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- End header -->
+
+    <!-- section -->
+
+    <section class="inner_banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="full">
+              <h3>Documents</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="university">
+      <label style="color: white" class="droplist-university-1" for="documents"
+        >Choisissez votre université :</label
+      >
+      <select id="university" class="droplist-university" name="documents">
+        <option value="université_de_carthage">Université de Carthage</option>
+        <option value="université_el_manar">Université El Manar</option>
+        <option value="université_de_manouba">Université de Manouba</option>
+        <option value="université_de_sousse">Université de Sousse</option>
+        <option value="université_de_monastir">Université de Monastir</option>
+        <option value="université_de_sfax">Université de Sfax</option>
+        <option value="université_de_gabes">Université de Gabes</option>
+        <option value="université_de_gafsa">Université de Gafsa</option>
+        <option value="université_de_jendouba">Université de Jendouba</option>
+        <option value="université_de_kairouan">Université de Kairouan</option>
+        <option value="ISET">ISET</option>
+      </select>
+
+      <label style="color: white" class="droplist-university-1" for="documents"
+        >Choisissez votre institut :</label
+      >
+      <select id="institute" class="droplist-university" name="documents">
+        <option value="university_of_tunis">University of Tunis</option>
+      </select>
+
+      <label style="color: white" class="droplist-university-1" for="documents"
+        >Choisissez votre Niveau :</label
+      >
+      <select id="university niveau" class="droplist-university" name="niveau">
+        <option value="1er Année">1er Année</option>
+        <option value="2eme Année">2eme Année</option>
+        <option value="3eme Année">3eme Année</option>
+      </select>
+
+      <a href="/cards" class="btn btn-primary btn-lg" onclick="saveOptions()"
+        >Confirm</a
+      >
+    </div>
+
+    <!-- end section -->
+    <!-- Start Footer -->
+    <footer style="bottom: 0" class="footer-box">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div class="footer_blog">
+              <div class="full margin-bottom_30">
+                <img src="images/footer_logo.png" alt="#" />
+              </div>
+              <div class="full white_fonts">
+                <p>
+                  Bienvenue sur notre plateforme éducative ! Nous proposons une
+                  vaste gamme de documents pédagogiques et organisons des
+                  sessions en direct pour les étudiants.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div class="footer_blog footer_menu white_fonts">
+              <h3>Navigation</h3>
+              <ul>
+                <li><a href="./courses.html">> Cours</a></li>
+                <li><a href="./contact.html">> Contact</a></li>
+                <li><a href="./reaserch.html">>Documents</a></li>
+                <li><a href="./formation.html">>Formation</a></li>
+                <li><a href="./about.html">>A propos</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div class="footer_blog full white_fonts">
+              <h3>Newsletter</h3>
+
+              <div class="newsletter_form">
+                <form action="/">
+                  <input type="email" placeholder="Email" name="#" required />
+                  <button>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div class="footer_blog full white_fonts">
+              <h3>Contact</h3>
+              <ul class="full">
+                <li>
+                  <img src="images/i5.png" /><span>Nabeul<br />Tunisie</span>
+                </li>
+                <li><img src="images/i6.png" /><span>email@gmail.com</span></li>
+                <li><img src="images/i7.png" /><span>+21629722048</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <script>
+      function saveOptions() {
+        const option2 = document.getElementById("institute").value;
+        const option3 = document.getElementById("university niveau").value;
+
+        localStorage.setItem("option2", option2);
+        localStorage.setItem("option3", option3);
+
+        window.location.href = "/cards";
+      }
+    </script>
+
+    <script>
+      // Define the options for each university
+      const institutes = {
+        université_de_carthage: [
+          { value: "ISTIC", text: "ISTIC (Borj Cedria)" },
+          { value: "ISI", text: "ISI (Ariana)" },
+          { value: "FSB", text: "FSB (Benzart)" },
+          { value: "ISSAT", text: "ISSAT (Mater)" },
+        ],
+        université_el_manar: [
+          { value: "FST", text: "FST (El Manar)" },
+          { value: "ISI", text: "ISI (El Manar)" },
+        ],
+        université_de_manouba: [{ value: "ISAMM", text: "ISAMM (Manouba)" }],
+        université_de_sousse: [
+          { value: "ISETCOM", text: "ISETCOM (Sousse)" },
+          { value: "ESSTHS", text: "ESSTHS (Hammem Sousse)" },
+          { value: "ISSAT", text: "ISSAT (Sousse)" },
+        ],
+        université_de_monastir: [
+          { value: "FSM", text: "FSM (Monastir)" },
+          { value: "ISIMM", text: "ISIMM (Monastir)" },
+          { value: "ISIMA", text: "ISIMA (Mahdia)" },
+          { value: "ISSATMa", text: "ISSATMa (Mahdia)" },
+        ],
+        université_de_sfax: [
+          { value: "FSS", text: "FSS" },
+          { value: "ISIMSF", text: "ISIMSF" },
+        ],
+        université_de_gabes: [
+          { value: "FSG", text: "FSG (Gabes)" },
+          { value: "ISIMG", text: "ISIMG (Gabes)" },
+          { value: "ISIM", text: "ISIM (Mednine)" },
+        ],
+        université_de_gafsa: [{ value: "FSGF", text: "FSGF" }],
+        université_de_kairouan: [
+          { value: "ISIGK", text: "ISIGK (Kairouan)" },
+          { value: "ISSATK", text: "ISSATK (Kairouan)" },
+          { value: "ISSATG", text: "ISSATG (Gassrine)" },
+          { value: "FSTSBZ", text: "FSTSBZ (Sidi Bou Zid)" },
+        ],
+        université_de_jendouba: [
+          { value: "ISIK", text: "ISIK (Kef)" },
+          { value: "ISLAIB", text: "ISLAIB (Beja)" },
+        ],
+        ISET: [
+          { value: "rades", text: "Rades" },
+          { value: "chargia", text: "Chargia" },
+          { value: "benzart", text: "Benzart" },
+          { value: "nabeul", text: "Nabeul" },
+          { value: "klibia", text: "Klibia" },
+          { value: "zaghouane", text: "Zaghouane" },
+          { value: "sousse", text: "Sousse" },
+          { value: "mahdia", text: "Mahdia" },
+          { value: "sfax", text: "Sfax" },
+          { value: "djerba", text: "Djerba" },
+          { value: "mednine", text: "Mednine" },
+          { value: "kbeli", text: "Kbeli" },
+          { value: "tataouine", text: "Tataouine" },
+          { value: "gafsa", text: "Gafsa" },
+          { value: "tozeur", text: "Tozeur" },
+          { value: "kairouan", text: "Kairouan" },
+          { value: "gassrine", text: "Gassrine" },
+          { value: "sidi_bou_zid", text: "Sidi Bou Zid" },
+          { value: "jendouba", text: "Jendouba" },
+          { value: "kef", text: "Kef" },
+          { value: "beja", text: "Beja" },
+          { value: "seliana", text: "Seliana" },
+          { value: "ksar_hlel", text: "Ksar Hlel" },
+          { value: "gabes", text: "Gabes" },
+        ],
+      };
+
+      // Get the select elements
+      const universitySelect = document.getElementById("university");
+      const instituteSelect = document.getElementById("institute");
+
+      // Function to update institutes based on selected university
+      function updateInstitutes() {
+        const selectedUniversity = universitySelect.value;
+        const institutesForUniversity = institutes[selectedUniversity] || [];
+        // Clear existing options
+        instituteSelect.innerHTML =
+          '<option value="">Select Institute</option>';
+        // Add new options based on the selected university
+        institutesForUniversity.forEach((institute) => {
+          const option = document.createElement("option");
+          option.value = institute.value;
+          option.textContent = institute.text;
+          instituteSelect.appendChild(option);
+        });
+      }
+
+      // Add event listener to the university select element
+      universitySelect.addEventListener("change", updateInstitutes);
+    </script>
+  </body>
+</html>
