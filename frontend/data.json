@@ -1,0 +1,22 @@
+{
+    "infoSections": {
+        "section1": {
+            "title": "Notre / Platforme",
+					"description": "Bienvenue sur notre plateforme éducative ! Nous proposons une vaste gamme de documents pédagogiques et organisons des sessions en direct pour les étudiants. Notre équipe est composée d'éducateurs et d'ingénieurs hautement qualifiés, dédiés à offrir un soutien exceptionnel pour votre parcours académique. Découvrez nos ressources et bénéficiez de l'expertise de nos professionnels pour atteindre vos objectifs éducatifs avec succès.",
+					"buttonText": "A propos",
+					"imgSrc": "/images/img2.png"
+				},
+				"section2": {
+					"title": "Séances / En Ligne",
+					"description" :"Nos sessions en direct couvrent des matières variées telles que les mathématiques, les algorithmes et bien d'autres. Grâce à notre plateforme en ligne, vous pourrez participer à des cours interactifs animés par des experts, poser des questions en temps réel et accéder à des ressources complémentaires. Profitez d'une expérience d'apprentissage dynamique et engageante, directement depuis chez vous.",
+					"buttonText": "Participer",
+					"imgSrc": "/images/img6.png"
+				},
+				"section3": {
+								"title": "Documents",
+								"description" :"Notre plateforme vous permet d'accéder à une vaste collection de documents académiques. Vous pouvez filtrer les documents en fonction de l'université ou de l'école de votre choix, afin de trouver précisément ce dont vous avez besoin. Trouvez facilement les ressources pertinentes pour vos études grâce à notre système de filtrage efficace.",
+								"buttonText": "Acheter"					,					
+					"imgSrc": "/images/img7.png"
+				}
+			}
+		}

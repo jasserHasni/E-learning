@@ -1,0 +1,21 @@
+.fancy-title::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 93%;
+    height: 0.5rem;
+    transform: skewX(-50deg);
+    top: 95%;
+    left: 1%;
+}
+
+.fancy-title::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 23%;
+    height: 0.5rem;
+    transform: skewX(-50deg);
+    top: 95%;
+    left: 1%;
+}

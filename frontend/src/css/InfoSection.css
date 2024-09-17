@@ -1,0 +1,12 @@
+.action-button::before{
+    content:'';
+    display:block;
+    position: absolute;
+    height:10rem;
+    width:2rem;
+    top:0;
+    left: 60%;
+    transform:skewX(-30deg);  
+    z-index:-1;
+}
+

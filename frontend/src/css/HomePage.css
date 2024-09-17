@@ -1,0 +1,18 @@
+.contact-info::before{
+    content: '';
+    position:absolute;
+    top:0;
+    height:100%;
+    width:200px;
+    left:0;
+    transform:translateX(-50%) rotate(-70deg)
+}
+.contact-info::after{
+    content: '';
+    position:absolute;
+    top:0;
+    height:180%;
+    width:20px;
+    left:0;
+    transform:translate(-400%, -10%) rotate(20deg)
+}
