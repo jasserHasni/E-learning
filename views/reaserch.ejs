@@ -42,6 +42,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+
   </head>
   <body
     id="inner_page"
@@ -112,43 +113,66 @@
       </div>
     </section>
     <div class="university">
-      <label style="color: white" class="droplist-university-1" for="documents"
-        >Choisissez votre université :</label
-      >
-      <select id="university" class="droplist-university" name="documents">
-        <option value="université_de_carthage">Université de Carthage</option>
-        <option value="université_el_manar">Université El Manar</option>
-        <option value="université_de_manouba">Université de Manouba</option>
-        <option value="université_de_sousse">Université de Sousse</option>
-        <option value="université_de_monastir">Université de Monastir</option>
-        <option value="université_de_sfax">Université de Sfax</option>
-        <option value="université_de_gabes">Université de Gabes</option>
-        <option value="université_de_gafsa">Université de Gafsa</option>
-        <option value="université_de_jendouba">Université de Jendouba</option>
-        <option value="université_de_kairouan">Université de Kairouan</option>
-        <option value="ISET">ISET</option>
-      </select>
-
-      <label style="color: white" class="droplist-university-1" for="documents"
-        >Choisissez votre institut :</label
-      >
-      <select id="institute" class="droplist-university" name="documents">
-        <option value="university_of_tunis">University of Tunis</option>
-      </select>
-
-      <label style="color: white" class="droplist-university-1" for="documents"
-        >Choisissez votre Niveau :</label
-      >
-      <select id="university niveau" class="droplist-university" name="niveau">
-        <option value="1er Année">1er Année</option>
-        <option value="2eme Année">2eme Année</option>
-        <option value="3eme Année">3eme Année</option>
-      </select>
-
-      <a href="/cards" class="btn btn-primary btn-lg" onclick="saveOptions()"
-        >Confirm</a
-      >
+      <div class="university-wrapper">
+        <div class="university-section-description">
+          <p>
+            Veuillez sélectionner votre université, votre institut, et votre niveau d'études afin d'accéder aux documents d'étude (séries d'exercices, cours, présentations PowerPoint). Assurez-vous que toutes les informations sont exactes.
+          </p>
+        </div>  
+        <div>
+          <label class="droplist-university-1" for="documents">
+            Choisissez votre université :
+          </label>
+          <select id="university" class="droplist-university" name="documents">
+            <option value="université_de_carthage">Université de Carthage</option>
+            <option value="université_el_manar">Université El Manar</option>
+            <option value="université_de_manouba">Université de Manouba</option>
+            <option value="université_de_sousse">Université de Sousse</option>
+            <option value="université_de_monastir">Université de Monastir</option>
+            <option value="université_de_sfax">Université de Sfax</option>
+            <option value="université_de_gabes">Université de Gabes</option>
+            <option value="université_de_gafsa">Université de Gafsa</option>
+            <option value="université_de_jendouba">Université de Jendouba</option>
+            <option value="université_de_kairouan">Université de Kairouan</option>
+            <option value="ISET">ISET</option>
+          </select>
+          <p class="form-info">
+            Sélectionnez l'université dans laquelle vous suivez vos études.
+          </p>
+        </div>
+    
+        <div>
+          <label class="droplist-university-1" for="documents">
+            Choisissez votre institut :
+          </label>
+          <select id="institute" class="droplist-university" name="documents">
+            <option value="university_of_tunis">University of Tunis</option>
+          </select>
+          <p class="form-info">
+            Sélectionnez votre institut associé, si applicable.
+          </p>
+        </div>
+    
+        <div>
+          <label class="droplist-university-1" for="documents">
+            Choisissez votre Niveau :
+          </label>
+          <select id="university-niveau" class="droplist-university" name="niveau">
+            <option value="1er Année">1er Année</option>
+            <option value="2eme Année">2eme Année</option>
+            <option value="3eme Année">3eme Année</option>
+          </select>
+          <p class="form-info">
+            Indiquez votre niveau actuel d'études pour accéder aux documents correspondants.
+          </p>
+        </div>
+    
+        <div class="university-button-wrapper">
+          <a href="/cards" class="university-button" onclick="saveOptions()">Confirmer</a>
+        </div>
+      </div>
     </div>
+    
 
     <!-- end section -->
     <!-- Start Footer -->

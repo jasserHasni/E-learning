@@ -1,3 +1,6 @@
+label{
+  margin:0;
+}
 /* Add responsive styling to your section */
 .inner_banner {
   padding: 20px;
@@ -7,37 +10,90 @@
 .university {
   font-family: "Muli", sans-serif;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #f6f6f6;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 80%;
+}
+.university-section-description{
+  width: 48rem;
+}
+
+
+.university-wrapper {
+  display: flex;
+  max-width:500px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 20px;
-  background: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Optional: semi-transparent background for readability */
-  border-radius: 10px;
-  /* Add margin for spacing */
+  gap:1rem;
+  padding:2% 0 ;
+}
 
-  width: 100%; /* Ensure full width */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  height: 80%;
+.university-wrapper div {
+  display:flex;
+  flex-direction:column;
+  width: min(95%,36rem);
+}
+.university-wrapper label {
+  color: black;
+  padding:0;
+}
+
+
+.university-wrapper select {
+  border-radius: 0.3rem;
+  padding: 10px;
+  width:100%;
+}
+
+.form-info{
+  width:100%;
+  word-wrap:break-word;
+  font-size:0.8rem;
+}
+
+
+.university-button{
+  padding:0.75rem 1rem;
+  background:#095a83;
+  color:white;
+  border-radius:0.4rem;
+  font-weight:bold;
+  transition: all ease-in-out 200ms;
+  
+
+}
+.university-button-wrapper{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.university-button-wrapper a {
+  width:fit-content;
+}
+.university-button:hover{
+  color:white;
+  background:#002147;
 }
 
 .droplist-university-1 {
   font-family: "Arial", sans-serif;
-  margin: 10px;
-  font-size: 1.2rem; /* Use relative units for better scaling */
+  font-size: 1.2rem;
   color: white;
 }
 
 .droplist-university {
-  margin: 10px;
-  font-size: 1rem; /* Use relative units for better scaling */
+  font-size: 1rem;
   width: 100%;
-  max-width: 300px; /* Ensure dropdown has a max-width */
 }
 
 .btn {
@@ -50,29 +106,36 @@
 /* Responsive adjustments */
 @media (max-width: 767px) {
   .droplist-university-1 {
-    font-size: 1rem; /* Adjust font size for smaller screens */
+    font-size: 1rem;
+    /* Adjust font size for smaller screens */
   }
 
   .droplist-university {
-    font-size: 0.9rem; /* Adjust font size for smaller screens */
-    max-width: 100%; /* Ensure dropdown takes full width on small screens */
+    font-size: 0.9rem;
+    /* Adjust font size for smaller screens */
+    max-width: 100%;
+    /* Ensure dropdown takes full width on small screens */
   }
 
   .btn {
-    width: 120px; /* Adjust button width for smaller screens */
+    width: 120px;
+    /* Adjust button width for smaller screens */
   }
 }
 
 @media (max-width: 575px) {
   .droplist-university-1 {
-    font-size: 0.9rem; /* Further adjustment for very small screens */
+    font-size: 0.9rem;
+    /* Further adjustment for very small screens */
   }
 
   .droplist-university {
-    font-size: 0.8rem; /* Further adjustment for very small screens */
+    font-size: 0.8rem;
+    /* Further adjustment for very small screens */
   }
 
   .btn {
-    width: 100px; /* Further adjustment for very small screens */
+    width: 100px;
+    /* Further adjustment for very small screens */
   }
 }
